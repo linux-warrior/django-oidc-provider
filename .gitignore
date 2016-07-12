@@ -9,4 +9,6 @@ dist/
 src/
 .venv
 .idea
+.project
+.pydevproject
 docs/_build/
