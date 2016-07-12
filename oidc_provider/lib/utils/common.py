@@ -50,6 +50,13 @@ def default_userinfo(claims, user):
     Default function for setting OIDC_USERINFO.
     `claims` is a dict that contains all the OIDC standard claims.
     """
+    claims['preferred_username'] = user.username
+    claims['name'] = u'{} {}'.format(user.first_name, user.last_name)
+    claims['name'] = claims['name'].strip()
+    claims['given_name'] = user.first_name
+    claims['family_name'] = user.last_name
+    claims['email'] = user.email
+
     return claims
 
 
